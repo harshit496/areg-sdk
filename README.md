@@ -5,7 +5,7 @@
 
 ![Latest release](https://img.shields.io/github/v/release/aregtech/areg-sdk?label=%20%F0%9F%93%A3%20Latest%20release&style=flat&logoColor=b0c0c0&labelColor=363D44)
 
-The latest development sources are in [20220701-candidate](https://github.com/aregtech/areg-sdk/tree/20220701-candidate) branch. Please check the [build status](https://github.com/aregtech/areg-sdk/actions) before cloning it.
+<!--  The latest development sources are in [20220701-candidate](https://github.com/aregtech/areg-sdk/tree/20220701-candidate) branch. Please check the [build status](https://github.com/aregtech/areg-sdk/actions) before cloning it. -->
 
 ---
 
@@ -159,14 +159,13 @@ To build with [cmake](https://cmake.org/), open _Terminal_ in your `projects` fo
 $ git clone https://github.com/aregtech/areg-sdk.git
 $ cd areg-sdk
 
-# Step 2: Create a subdirectory for CMake cache files.
-$ mkdir build && cd build
+# Step 2: Initialize cache and build configuration in folder './build' folder.
+#         The switch 'BUILD_EXAMPLES' enable or disables examples. By default, it is enabled.
+#         Example: cmake -B ./build -DBUILD_EXAMPLES=OFF
+$ cmake -B ./build
 
-# Step 3: Initialize cache and build configuration, enable examples.
-$ cmake .. -DBUILD_EXAMPLES=ON
-
-# Step 4: Compile sources by calling: cmake --build . [-j [concurrent jobs]]
-$ cmake --build . -j 8
+# Step 3: Compile sources by calling: cmake --build ./build [-j [concurrent jobs]]
+$ cmake --build ./build -j8
  ```
 
 #### Build with `make`
